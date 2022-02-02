@@ -20,7 +20,6 @@ async def check_newbie(user_id):
     if  rows == None:
         return False
     else:
-        print(rows)
         return True
 
 

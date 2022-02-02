@@ -11,15 +11,11 @@ cursor = connect.cursor()
 
 @dp.message_handler(text="/start")
 async def onstart(message: Message):
-    check_new = await check_newbie(message.from_user.id)
-    check_new
-    if check_new == False:
-        add_to = await newbie_db(message.from_user.id, message.from_user.full_name)
-        add_to
+    if await check_newbie(message.from_user.id) is False:
 
-        if add_to == True:
+        if await newbie_db(message.from_user.id, message.from_user.full_name) is True:
             await message.answer(f"Добро пожаловать {message.from_user.full_name}🏧")
-        elif add_to == False:
+        else:
             await message.answer(f"Возникла какая то ошибка ⛔")
-    elif check_new == True:
+    else:
         await message.answer(f"С возращением, {message.from_user.full_name} 🏧")
