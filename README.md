@@ -1,5 +1,6 @@
 # bsk_aiogram_template
-My PERSONAL(!) template
+
+This is edited Latand's aiogram bot template
 
 <h2>Installing libraries:</h2>
 
